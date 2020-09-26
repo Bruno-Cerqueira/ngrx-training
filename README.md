@@ -10,9 +10,7 @@
   <p align="center">
     A project to work with ngrx!
     <br />
-    <a href="https://survivejs.com/"><strong>Follow the used guide</strong></a>
-    <br />
-    <a href="https://webpack.js.org/concepts/">Explore the docs</a>
+    <a href="https://ngrx.io/docs">Explore the docs</a>
   </p>
 </p>
 
