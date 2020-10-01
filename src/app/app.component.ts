@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ngrx-training';
+
+  logChange(index) {
+    console.log(index);
+  }
 }
