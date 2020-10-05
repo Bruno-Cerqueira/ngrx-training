@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { AnimeDataService } from './global/services/anime-data.service';
 
 @Component({
   selector: 'app-root',
@@ -9,12 +8,7 @@ import { AnimeDataService } from './global/services/anime-data.service';
 export class AppComponent {
   title = 'ngrx-training';
 
-  constructor(private animeDataService: AnimeDataService) {
+  constructor() {
 
-  }
-
-  logChange(index) {
-    this.animeDataService.getAnimeList();
-    console.log(index);
   }
 }
