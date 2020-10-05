@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AnimeDataService } from '../global/services/anime-data.service';
 
 @Component({
   selector: 'app-animes',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AnimesComponent implements OnInit {
 
-  constructor() { }
+  constructor(private animeDataService: AnimeDataService) { }
 
   ngOnInit(): void {
+    this.requestData();
+  }
+
+  requestData (){
+    console.log(this.animeDataService.getGenreList());
   }
 
 }

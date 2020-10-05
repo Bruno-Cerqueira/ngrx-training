@@ -1,7 +1,7 @@
 import gql from 'graphql-tag';
 
 export const ANIME_QUERY_LIST = gql`
-  query getAnime {
+  query getAnimes {
     MediaList {
       media {
         id
@@ -11,5 +11,11 @@ export const ANIME_QUERY_LIST = gql`
         }
       }
     }
+  }
+`;
+
+export const GENRE_QUERY_COLLECTION = gql`
+  query getGenres {
+    GenreCollection
   }
 `;
