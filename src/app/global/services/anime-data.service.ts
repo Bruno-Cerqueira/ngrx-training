@@ -19,7 +19,7 @@ export class AnimeDataService {
     })
     .pipe(map((res: any) => res.data.Page))
     .toPromise()
-    .then(data => console.log(data))
+    .then(data => data)
   }
 
   async getGenreList() {

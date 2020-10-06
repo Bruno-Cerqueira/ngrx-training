@@ -48,42 +48,47 @@ describe('AnimeDataService', () => {
   });
 
   describe('when getAnimeList is called', () => {
+    const pageData = {
+      pageInfo: {
+        total: 10,
+        perPage: 2,
+        currentPage: 1,
+        lastPage: 5,
+        hasNextPage: true
+      },
+      media: [
+        {
+          coverImage: {
+            color: 'blue',
+            extraLarge: 'urlExtra',
+            large: 'urlLarge',
+          },
+          genres: ['Action', 'Adventure'],
+          id: 1,
+          title: {
+            english: 'Cowboy Bebop',
+            userPreferred: 'Cowboy Bebop',
+          }
+        }
+      ],
+    }
 
     afterEach(() => {
       controller.verify();
     });
 
-    it('should return genre list', async (done) => {
+    it('should return anime list', async (done) => {
       service.getAnimeList().then(data => {
-        expect(data).toEqual(1);
+        expect(data).toEqual(pageData);
         done();
       })
 
       const op = controller.expectOne(ANIME_QUERY_LIST);
 
       op.flush({
-        pageInfo: {
-          total: 10,
-          perPage: 2,
-          currentPage: 1,
-          lastPage: 5,
-          hasNextPage: true
-        },
-        media: [
-          {
-            coverImage: {
-              color: 'blue',
-              extraLarge: 'urlExtra',
-              large: 'urlLarge',
-            },
-            genres: ['Action', 'Adventure'],
-            id: 1,
-            title: {
-              english: 'Cowboy Bebop',
-              userPreferred: 'Cowboy Bebop',
-            }
-          }
-        ],
+        data: {
+          Page: pageData,
+        }
       });
     });
   });
