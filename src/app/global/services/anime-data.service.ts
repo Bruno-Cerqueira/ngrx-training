@@ -15,7 +15,9 @@ export class AnimeDataService {
   async getAnimeList() {
     return this.apollo.query({
       query: ANIME_QUERY_LIST,
+      variables: {genres: null}
     })
+    .pipe(map((res: any) => res.data.Page))
     .toPromise()
     .then(data => console.log(data))
   }
@@ -26,6 +28,6 @@ export class AnimeDataService {
     })
     .pipe(map((res: any) => res.data.GenreCollection))
     .toPromise()
-    .then(data => console.log(data))
+    .then(data => data)
   }
 }

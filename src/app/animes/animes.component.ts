@@ -15,7 +15,7 @@ export class AnimesComponent implements OnInit {
   }
 
   requestData (){
-    console.log(this.animeDataService.getGenreList());
+    console.log(this.animeDataService.getAnimeList());
   }
 
 }
