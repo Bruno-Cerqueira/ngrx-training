@@ -6,6 +6,7 @@ import { MaterialModule } from '../material/material.module';
 
 import { AnimesComponent } from './animes.component';
 import { NavbarComponent } from '../global/components/navbar/navbar.component';
+import { AnimesFilterComponent } from './animes-filter/animes-filter.component';
 
 describe('AnimesComponent', () => {
   let component: AnimesComponent;
@@ -14,7 +15,7 @@ describe('AnimesComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AnimesComponent, NavbarComponent ],
+      declarations: [ AnimesComponent, NavbarComponent, AnimesFilterComponent ],
       imports: [BrowserAnimationsModule, MaterialModule],
       providers: [AnimeDataServiceStub]
     })
